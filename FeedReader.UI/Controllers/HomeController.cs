@@ -23,7 +23,7 @@ namespace FeedsReader.UI.Controllers
             this.signInManager = signInManager;
         }
         [Authorize]
-        public ActionResult Index(string url, string all)
+        public ActionResult Index(string url, string search)
         {
             try
             {
@@ -79,11 +79,16 @@ namespace FeedsReader.UI.Controllers
                     FeedID = RSSFeed.Select(x => x.Id).FirstOrDefault()
                 };
 
-                var FeedExist = _db.Subscribes.Any(x => x.SubName == sb.SubName.Trim() && x.UserID == user);
-                if (FeedExist == false)
+                var FeedExist = _db.Subscribes.FirstOrDefault(x => x.SubName == sb.SubName.Trim() && x.UserID == user);
+                if (FeedExist == null)
                 {
                     _db.Subscribes.Add(sb);
                     _db.SaveChanges();
+                    ViewBag.ShowUnsubcribe = sb.SubscribeID;
+                }
+                else
+                {
+                    ViewBag.ShowUnsubcribe = FeedExist.SubscribeID;
                 }
 
 
@@ -99,11 +104,15 @@ namespace FeedsReader.UI.Controllers
         }
         public ActionResult Unsubcribe(String id)
         {
-            Guid FeedGuid = Guid.Parse(id);
-            var XFeed = _db.Subscribes.FirstOrDefault(x => x.SubscribeID == FeedGuid);
+            try
+            {
+                Guid FeedGuid = Guid.Parse(id);
+                var XFeed = _db.Subscribes.FirstOrDefault(x => x.SubscribeID == FeedGuid);
 
-            _db.Subscribes.Remove(XFeed);
-            _db.SaveChanges();
+                _db.Subscribes.Remove(XFeed);
+                _db.SaveChanges();
+            }
+            catch { }
             return View("Index");
         }
         public ActionResult About()
@@ -134,6 +143,19 @@ namespace FeedsReader.UI.Controllers
                 List.Add(mi);
             }
             return PartialView("_Navigation", List);
+        }
+
+
+
+
+        public ActionResult FeedSearch(string search)
+        {
+            var FeedSearch = (ICollection<FeedItem>)TempData["search"];
+            var result = FeedSearch.Where(x => x.Title.ToLower().Contains(search.ToLower()));
+            ViewBag.RSSFeed = result;
+            ViewBag.count = result.Count();
+
+            return View("index");
         }
     }
 }
