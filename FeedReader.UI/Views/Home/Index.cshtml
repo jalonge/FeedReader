@@ -15,39 +15,41 @@
 </div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="ibox-content m-b-sm border-bottom">
-        @using (Html.BeginForm("FeedSearch", "Home", FormMethod.Get))
-        {<div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
 
-                        @if (ViewBag.search != null)
-                        {
-                            < input name = "search" class="form-control" value="@ViewBag.search" />
 
-                        }
-                        else
-                        {
-                            <input name="search" class="form-control" placeholder="search" />
-                        }
 
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="form-group">
-                        <input type="submit" value="search" class="form-control btn btn-outline btn-info" />
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="form-group">
-                    </div>
-                </div>
-            </div>}
-    </div>
     <div class="row">
         <div class="col-md-12">
             @if (ViewBag.RSSFeed != null)
-            {
+            {<div class="ibox-content m-b-sm border-bottom">
+                    @using (Html.BeginForm("FeedSearch", "Home", FormMethod.Get))
+                    {<div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+
+                                    @if (ViewBag.search != null)
+                                    {
+                                        < input name = "search" class="form-control" value="@ViewBag.search" />
+
+                                    }
+                                    else
+                                    {
+                                        <input name="search" class="form-control" placeholder="search" />
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <input type="submit" value="search" class="form-control btn btn-outline btn-info" />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                </div>
+                            </div>
+                        </div>}
+                </div>
                 TempData["search"] = ViewBag.RSSFeed;
                 <div class="ibox">
                     <div class="ibox-title">

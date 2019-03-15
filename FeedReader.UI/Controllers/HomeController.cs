@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace FeedsReader.UI.Controllers
 {
-
+    [Authorize]
     public class HomeController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
@@ -22,7 +22,7 @@ namespace FeedsReader.UI.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-        [Authorize]
+
         public ActionResult Index(string url, string search)
         {
             try
