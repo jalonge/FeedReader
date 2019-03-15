@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedsReader.UI", "FeedReade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedReader", "FeedReader\FeedReader.csproj", "{9F2BA803-6CE2-400C-B65F-CAFF73BD29EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedReader.ConsoleApp", "FeedReader.Console\FeedReader.ConsoleApp.csproj", "{5BB45B9E-5544-4320-81E2-845F98EA86E2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{9F2BA803-6CE2-400C-B65F-CAFF73BD29EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F2BA803-6CE2-400C-B65F-CAFF73BD29EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F2BA803-6CE2-400C-B65F-CAFF73BD29EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BB45B9E-5544-4320-81E2-845F98EA86E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BB45B9E-5544-4320-81E2-845F98EA86E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BB45B9E-5544-4320-81E2-845F98EA86E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BB45B9E-5544-4320-81E2-845F98EA86E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
