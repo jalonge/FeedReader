@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FeedReader.UI
+namespace FeedsReader.UI
 {
     public class RouteConfig
     {

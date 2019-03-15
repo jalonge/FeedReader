@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using FeedReader.UI.Models;
+using FeedsReader.UI.Models;
 
-namespace FeedReader.UI.Controllers
+namespace FeedsReader.UI.Controllers
 {
     [Authorize]
     public class ManageController : Controller

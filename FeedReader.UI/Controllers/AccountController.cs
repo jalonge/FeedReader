@@ -1,4 +1,4 @@
-﻿using FeedReader.UI.Models;
+﻿using FeedsReader.UI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FeedReader.UI.Controllers
+namespace FeedsReader.UI.Controllers
 {
     [Authorize]
     public class AccountController : Controller

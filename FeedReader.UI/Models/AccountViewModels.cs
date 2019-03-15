@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace FeedReader.UI.Models
+namespace FeedsReader.UI.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

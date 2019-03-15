@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F2BA803-6CE2-400C-B65F-CAFF73BD29EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FeedReader</RootNamespace>
+    <AssemblyName>FeedReader</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.9.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.9.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Feed.cs" />
+    <Compile Include="FeedItem.cs" />
+    <Compile Include="FeedReader.cs" />
+    <Compile Include="Feeds\0.91\Rss091Feed.cs" />
+    <Compile Include="Feeds\0.91\Rss091FeedImage.cs" />
+    <Compile Include="Feeds\0.91\Rss091FeedItem.cs" />
+    <Compile Include="Feeds\0.92\Rss092Feed.cs" />
+    <Compile Include="Feeds\0.92\Rss092FeedImage.cs" />
+    <Compile Include="Feeds\0.92\Rss092FeedItem.cs" />
+    <Compile Include="Feeds\1.0\Rss10Feed.cs" />
+    <Compile Include="Feeds\1.0\Rss10FeedImage.cs" />
+    <Compile Include="Feeds\1.0\Rss10FeedItem.cs" />
+    <Compile Include="Feeds\1.0\Rss10FeedTextInput.cs" />
+    <Compile Include="Feeds\2.0\Rss20Feed.cs" />
+    <Compile Include="Feeds\2.0\Rss20FeedImage.cs" />
+    <Compile Include="Feeds\2.0\Rss20FeedItem.cs" />
+    <Compile Include="Feeds\Atom\AtomFeed.cs" />
+    <Compile Include="Feeds\Atom\AtomFeedItem.cs" />
+    <Compile Include="Feeds\Atom\AtomLink.cs" />
+    <Compile Include="Feeds\Atom\AtomPerson.cs" />
+    <Compile Include="Feeds\Base\BaseFeed.cs" />
+    <Compile Include="Feeds\Base\BaseFeedItem.cs" />
+    <Compile Include="Feeds\Base\FeedCloud.cs" />
+    <Compile Include="Feeds\Base\FeedImage.cs" />
+    <Compile Include="Feeds\Base\FeedItemEnclosure.cs" />
+    <Compile Include="Feeds\Base\FeedItemSource.cs" />
+    <Compile Include="Feeds\Base\FeedTextInput.cs" />
+    <Compile Include="Feeds\DublinCore.cs" />
+    <Compile Include="Feeds\MediaRSS\Media.cs" />
+    <Compile Include="Feeds\MediaRSS\MediaGroup.cs" />
+    <Compile Include="Feeds\MediaRSS\MediaRssFeed.cs" />
+    <Compile Include="Feeds\MediaRSS\MediaRssFeedImage.cs" />
+    <Compile Include="Feeds\MediaRSS\MediaRssFeedItem.cs" />
+    <Compile Include="Feeds\MediaRSS\Medium.cs" />
+    <Compile Include="Feeds\MediaRSS\Thumbnail.cs" />
+    <Compile Include="Feeds\Syndication.cs" />
+    <Compile Include="FeedType.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="HtmlFeedLink.cs" />
+    <Compile Include="Parser\AbstractXmlFeedParser.cs" />
+    <Compile Include="Parser\AtomParser.cs" />
+    <Compile Include="Parser\Exceptions\FeedTypeNotSupportedException.cs" />
+    <Compile Include="Parser\Exceptions\InvalidFeedLinkException.cs" />
+    <Compile Include="Parser\Factory.cs" />
+    <Compile Include="Parser\FeedParser.cs" />
+    <Compile Include="Parser\IFeedParser.cs" />
+    <Compile Include="Parser\MediaRssParser.cs" />
+    <Compile Include="Parser\Rss091Parser.cs" />
+    <Compile Include="Parser\Rss092Parser.cs" />
+    <Compile Include="Parser\Rss10Parser.cs" />
+    <Compile Include="Parser\Rss20Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlNotFoundException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

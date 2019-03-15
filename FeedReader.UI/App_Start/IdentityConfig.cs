@@ -1,4 +1,4 @@
-﻿using FeedReader.UI.Models;
+﻿using FeedsReader.UI.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -8,7 +8,7 @@ using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace FeedReader.UI
+namespace FeedsReader.UI
 {
     public class EmailService : IIdentityMessageService
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(FeedReader.UI.Startup))]
-namespace FeedReader.UI
+[assembly: OwinStartupAttribute(typeof(FeedsReader.UI.Startup))]
+namespace FeedsReader.UI
 {
     public partial class Startup
     {

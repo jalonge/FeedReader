@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace FeedReader.UI
+namespace FeedsReader.UI
 {
     public static class HMTLHelperExtensions
     {

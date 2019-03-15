@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using FeedReader.UI.Models;
+using FeedsReader.UI.Models;
 
-namespace FeedReader.UI
+namespace FeedsReader.UI
 {
     public partial class Startup
     {
